@@ -1,6 +1,9 @@
-﻿using System;
+﻿using MVVM_implementacion_JAGS.VistaModelo;
+using MVVM_implementacion_JAGS.Vistas;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
 
 namespace MVVM_implementacion_JAGS
 {
@@ -10,7 +13,8 @@ namespace MVVM_implementacion_JAGS
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Page1();
+           
         }
 
         protected override void OnStart()
