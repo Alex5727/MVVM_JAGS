@@ -8,7 +8,7 @@ using System.ComponentModel;
 
 namespace MVVM_implementacion_JAGS.VistaModelo
 {
-    public class BaseViewModel
+    public class BaseViewModel : INotifyPropertyChanged
     {
         public INavigation Navigation;
 

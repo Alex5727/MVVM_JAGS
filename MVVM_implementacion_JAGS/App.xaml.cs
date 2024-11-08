@@ -13,7 +13,7 @@ namespace MVVM_implementacion_JAGS
         {
             InitializeComponent();
 
-            MainPage = new Page1();
+            MainPage = new pagina1();
            
         }
 

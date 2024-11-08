@@ -7,42 +7,38 @@ using Xamarin.Forms;
 
 namespace MVVM_implementacion_JAGS.VistaModelo
 {
-     class VMpatron : BaseViewModel 
+     class VMpatron : BaseViewModel
     {
-        #region Variables
+        #region VARIABLES
         string _Texto;
         #endregion
+        #region CONSTRUCTOR
 
-        #region Constructor
-        public VMpatron(INavigation navigation)
-        {
-            Navigation = navigation;
-        }
-        #endregion
-
-        #region Objetos
         public string Texto
         {
             get { return _Texto; }
             set { SetValue(ref _Texto, value); }
         }
         #endregion
+        #region PROCESOS
 
-        #region Procesos
-        public async Task ProcesoAsyncrong()
+        public async Task ProccesoAsyncrong()
         {
-
         }
-
         public void ProcesoSimple()
         {
-
         }
         #endregion
-
-        #region Comandos
-        public ICommand ProcesoAsyncommand => new Command(async () => await ProcesoAsyncrong());
+        #region COMANDOS
+        public ICommand ProcesoAsynccommand => new Command(async () => await ProccesoAsyncrong());
         public ICommand ProcesoSimpcommand => new Command(ProcesoSimple);
+        #endregion
+
+        #region CONSTRUCTOR
+        public VMpatron(INavigation navigation)
+        {
+            Navigation = navigation;
+        }
         #endregion
     }
 }
