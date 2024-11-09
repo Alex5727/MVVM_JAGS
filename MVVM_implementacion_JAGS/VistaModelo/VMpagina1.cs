@@ -14,8 +14,6 @@ namespace MVVM_implementacion_JAGS.VistaModelo
         string _N1;
         string _N2;
         string _R;
-        string _TipoUsuario;
-        string _Mensaje;
         #endregion
 
         #region CONSTRUCTOR
@@ -26,12 +24,6 @@ namespace MVVM_implementacion_JAGS.VistaModelo
         #endregion
 
         #region OBJETOS
-
-        public string TipoUsuario
-        {
-            get { return _TipoUsuario; }
-            set { SetValue(ref _TipoUsuario, value); }
-        }
         public string N1
         {
             get { return _N1; }
@@ -49,12 +41,6 @@ namespace MVVM_implementacion_JAGS.VistaModelo
             get { return _R; }
             set { SetValue(ref _R, value); }
         }
-
-        public string Mensaje
-        {
-            get { return _Mensaje; }
-            set { SetValue(ref _Mensaje, value); }
-        }
         #endregion
 
         #region PROCESOS
@@ -71,11 +57,6 @@ namespace MVVM_implementacion_JAGS.VistaModelo
             n2 = Convert.ToDouble(N2);
             r = n1 + n2;
             R = r.ToString();
-        }
-
-        public async Task Alerta()
-        {
-            await DisplayAlert("Titulo", Mensaje, "OK");
         }
 
         public void ProcesoSimple()
