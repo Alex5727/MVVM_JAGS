@@ -48,6 +48,31 @@
        HorizontalOptions="Center"
        FontAttributes="Bold"
        FontSize="35" />
+
+            <Button Text="Ir a pagina 2"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    BackgroundColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="5"
+                    TextColor="Black"></Button>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Picker:"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center" />
+                <Picker HorizontalOptions="FillAndExpand"
+                        Title="Seleccione una opción"
+                        SelectedItem="{Binding SeleccionarTipoUsuario}">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Administrador</x:String>
+                            <x:String>Empleado</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+
         </StackLayout>
     </Grid>
 </ContentPage>
