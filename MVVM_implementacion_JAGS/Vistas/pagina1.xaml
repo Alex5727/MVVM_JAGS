@@ -54,6 +54,7 @@
                     HorizontalOptions="Center"
                     BackgroundColor="White"
                     FontAttributes="Bold"
+                    Command="{Binding PNavegarPagina2command}"
                     CornerRadius="5"
                     TextColor="Black"></Button>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">

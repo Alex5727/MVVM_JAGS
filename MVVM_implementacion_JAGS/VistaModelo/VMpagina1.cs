@@ -16,6 +16,7 @@ namespace MVVM_implementacion_JAGS.VistaModelo
         string _R;
         string _TipoUsuario;
         string _Mensaje;
+
         #endregion
 
         #region CONSTRUCTOR
@@ -78,6 +79,12 @@ namespace MVVM_implementacion_JAGS.VistaModelo
             await DisplayAlert("Titulo", Mensaje, "OK");
         }
 
+        public async Task NavegarPagina2()
+        {
+            await Navigation.PushAsync(new pagina2());
+        }
+
+
         public void ProcesoSimple()
         {
         }
@@ -86,6 +93,10 @@ namespace MVVM_implementacion_JAGS.VistaModelo
         #region COMANDOS
         public ICommand suymarcommand => new Command(Sumar);
         public ICommand Procesoasynccomand => new Command(async () => await Procesoasync());
+
+
+        public ICommand PNavegarPagina2command => new Command(async () => await NavegarPagina2());
+        public ICommand Suymarcommand => new Command(Sumar);
         #endregion
     }
 }
