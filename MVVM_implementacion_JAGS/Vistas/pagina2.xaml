@@ -8,7 +8,7 @@
         <CollectionView ItemsSource="{Binding listaUsuarios}"
                         VerticalOptions="Center"
                         Margin="20,80,20,0"
-                        x:Name="listaUser">
+                        x:Name="listauser">
 
         <CollectionView.ItemsLayout>
             <GridItemsLayout Orientation="Vertical"
@@ -30,9 +30,13 @@
                                FontAttributes="Bold"
                                TextColor="White"/>
                     </StackLayout>
-                </Frame>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Path=BindingContext.Alertacommand, Source={x:Reference listauser}}"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
     </Grid>
 </ContentPage>
+    

@@ -18,7 +18,6 @@ namespace MVVM_implementacion_JAGS.VistaModelo
             #region CONSTRUCTOR
             public VMpagina2()
             {
-
                 MostrarUsuarios();
             }
             #endregion
@@ -28,6 +27,8 @@ namespace MVVM_implementacion_JAGS.VistaModelo
                 Navigation = navigation;
                 MostrarUsuarios();
             }
+
+
 
             #region COMANDOS 
 
@@ -60,11 +61,20 @@ namespace MVVM_implementacion_JAGS.VistaModelo
             {
             }
             public ICommand Volvercommand => new Command(async () => await Cualquiera());
-            #endregion
+        
 
+        public async Task Alerta()
+        {
+            await DisplayAlert("Titulo", "Mensaje", "OK");
         }
+        public ICommand Alertacommand => new Command(async () => await Alerta());
 
-        public class Musuarios
+
+
+     
+        }
+        #endregion
+    public class Musuarios
     {
             public string Nombre { get; set; }
             public string Imagen { get; set; }
