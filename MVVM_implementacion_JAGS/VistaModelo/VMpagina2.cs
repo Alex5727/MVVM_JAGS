@@ -57,17 +57,17 @@ namespace MVVM_implementacion_JAGS.VistaModelo
             };
             }
 
-            public async Task Cualquiera()
+            public async Task Volver()
             {
             }
-            public ICommand Volvercommand => new Command(async () => await Cualquiera());
+            public ICommand Volvercommand => new Command(async () => await Volver());
         
 
-        public async Task Alerta()
+        public async Task Alerta(Musuarios parametros)
         {
-            await DisplayAlert("Titulo", "Mensaje", "OK");
+            await DisplayAlert("Titulo", parametros.Nombre, "OK");
         }
-        public ICommand Alertacommand => new Command(async () => await Alerta());
+        public ICommand Alertacommand => new Command<Musuarios>(async (p) => await Alerta(p));
 
 
 

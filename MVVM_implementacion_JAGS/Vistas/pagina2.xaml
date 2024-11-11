@@ -31,7 +31,9 @@
                                TextColor="White"/>
                     </StackLayout>
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Path=BindingContext.Alertacommand, Source={x:Reference listauser}}"/>
+                            <TapGestureRecognizer Command="{Binding Path=BindingContext.Alertacommand, 
+                                Source={x:Reference listauser}}"
+                                                  CommandParameter="{Binding .}"/>
                         </Frame.GestureRecognizers>
                     </Frame>
             </DataTemplate>
