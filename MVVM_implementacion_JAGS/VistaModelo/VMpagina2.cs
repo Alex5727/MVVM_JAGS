@@ -40,19 +40,19 @@ namespace MVVM_implementacion_JAGS.VistaModelo
                 new Musuarios
                 {
                     Nombre = "Alex",
-                    Imagen = "https://ibb.co/wg7cWjS"
+                    Imagen = "https://ibb.co/6sXV78m"
                 },
 
                 new Musuarios
                 {
                     Nombre = "Alejandro",
-                    Imagen = "https://ibb.co/tHVKRqJ"
+                    Imagen = "https://ibb.co/bmG33wL"
                 },
 
                 new Musuarios
                 {
                     Nombre = "Grijalva",
-                    Imagen = "https://ibb.co/wc7XsN4"
+                    Imagen = "https://ibb.co/9hP5Gg4"
                 }
             };
             }

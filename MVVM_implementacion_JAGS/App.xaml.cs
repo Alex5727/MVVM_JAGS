@@ -13,8 +13,8 @@ namespace MVVM_implementacion_JAGS
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new pagina1());     
-           
+            MainPage = new NavigationPage(new Menuprincipal());        
+
         }
 
         protected override void OnStart()

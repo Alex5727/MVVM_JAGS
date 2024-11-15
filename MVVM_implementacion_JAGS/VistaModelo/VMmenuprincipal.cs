@@ -13,44 +13,44 @@ namespace MVVM_implementacion_JAGS.VistaModelo
     public class VMmenuprincipal : BaseViewModel
     {
             private string _Texto;
-            public List<Mmenuprincipal> listaUsuarios { get; set; }
+            public List<Mmenuprincipal> listapaginas { get; set; }
 
             #region CONSTRUCTOR
             public VMmenuprincipal()
             {
-                MostrarUsuarios();
+            MostrarPaginas();
             }
             #endregion
 
             public VMmenuprincipal(INavigation navigation)
             {
                 Navigation = navigation;
-                MostrarUsuarios();
+            MostrarPaginas();
             }
 
         #region COMANDOS 
 
 
-        public void MostrarUsuarios()
+        public void MostrarPaginas()
         {
-            listaUsuarios = new List<Mmenuprincipal> {
+            listapaginas = new List<Mmenuprincipal> {
 
                 new Mmenuprincipal
                 {
-                    Nombre = "Entry, datepicker, picker, label, navegacion",
-                    Icono = "https://ibb.co/wg7cWjS"
+                    Pagina = "Entry, datepicker, picker, label, navegacion",
+                    Icono = "https://ibb.co/6sXV78m"
                 },
 
                 new Mmenuprincipal
                 {
-                    Nombre = "CollectionView sin enlace a Base de datos",
-                    Icono = "https://ibb.co/tHVKRqJ"
+                    Pagina = "CollectionView sin enlace a Base de datos",
+                    Icono = "https://ibb.co/bmG33wL"
                 },
 
                 new Mmenuprincipal
                 {
-                    Nombre = "Crud pokemon",
-                    Icono = "https://ibb.co/wc7XsN4"
+                    Pagina = "Crud pokemon",
+                    Icono = "https://ibb.co/9hP5Gg4"
                 }
             };
         }
@@ -85,7 +85,7 @@ namespace MVVM_implementacion_JAGS.VistaModelo
         #endregion
         public class Mmenuprincipal
     {
-            public string Nombre { get; set; }
+            public string Pagina { get; set; }
             public string Icono { get; set; }
         }
 
