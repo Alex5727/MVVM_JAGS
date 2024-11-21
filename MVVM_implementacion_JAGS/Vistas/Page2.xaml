@@ -5,7 +5,18 @@
              NavigationPage.HasNavigationBar="False">
 
     <Grid>
-        <Image Source="flecha-izquierda.png" />
+        <Image Source="flecha-izquierda.png" 
+                VerticalOptions="Start"
+               HeightRequest="50"
+               HorizontalOptions="Start"
+               Margin="10">
+        <Image.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding VolverCommand}"/>
+        </Image.GestureRecognizers>
+        </Image>
     </Grid>
-    
+   
+
+
+
 </ContentPage>
