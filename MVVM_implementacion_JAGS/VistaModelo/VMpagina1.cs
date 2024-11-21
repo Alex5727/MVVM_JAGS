@@ -59,8 +59,10 @@ namespace MVVM_implementacion_JAGS.VistaModelo
         #endregion
 
         #region PROCESOS
-        public async Task Procesoasync()
-        { }
+        public async Task NavegarPagina2()
+        {
+            await Navigation.PushAsync(new Page2());
+        } 
 
         public void Sumar()
         {
@@ -73,17 +75,17 @@ namespace MVVM_implementacion_JAGS.VistaModelo
             r = n1 + n2;
             R = r.ToString();
         }
-
+        
         public async Task Alerta()
         {
             await DisplayAlert("Titulo", Mensaje, "OK");
         }
-
+        /*
         public async Task NavegarPagina2()
         {
             await Navigation.PushAsync(new pagina2());
         }
-
+        */
 
         public void ProcesoSimple()
         {
@@ -91,9 +93,8 @@ namespace MVVM_implementacion_JAGS.VistaModelo
         #endregion
 
         #region COMANDOS
-        public ICommand suymarcommand => new Command(Sumar);
-        public ICommand Procesoasynccomand => new Command(async () => await Procesoasync());
-
+        
+        //public ICommand Procesoasynccomand => new Command(async () => await NavegarPagina2());
 
         public ICommand PNavegarPagina2command => new Command(async () => await NavegarPagina2());
         public ICommand Suymarcommand => new Command(Sumar);
