@@ -1,5 +1,6 @@
 ﻿using MVVM_implementacion_JAGS.VistaModelo;
 using MVVM_implementacion_JAGS.Vistas;
+using MVVM_implementacion_JAGS.Vistas.Pokemon;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,7 +14,7 @@ namespace MVVM_implementacion_JAGS
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new pagina1());        
+            MainPage = new NavigationPage(new ListaPokemon());        
 
         }
 
