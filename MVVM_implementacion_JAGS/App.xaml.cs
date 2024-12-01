@@ -14,7 +14,7 @@ namespace MVVM_implementacion_JAGS
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new ListaPokemon());        
+            MainPage = new NavigationPage(new RegistrarPokemon());        
 
         }
 
