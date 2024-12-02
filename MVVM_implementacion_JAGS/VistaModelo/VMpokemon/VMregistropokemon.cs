@@ -4,6 +4,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using MVVM_implementacion_JAGS.Datos;
+using MVVM_implementacion_JAGS.Modelo;
 
 namespace MVVM_implementacion_JAGS.VistaModelo.VMpokemon
 {
@@ -53,16 +55,33 @@ namespace MVVM_implementacion_JAGS.VistaModelo.VMpokemon
         }
         #endregion
         #region PROCESOS
-
-        public async Task ProccesoAsyncrong()
+        public async Task Insertar()
         {
+            var funcion = new Dpokemon();
+            var parametros = new Mpokemon();
+
+            parametros.Colorfondo = Txtcolorfondo;
+            parametros.Colorpoder = Txtcolorpoder;
+            parametros.Icono = Txticono;
+            parametros.Nombre = Txtnombre;
+            parametros.NroOrden = Txtnro;
+            parametros.Poder = Txtpoder;
+
+            await funcion.Insertarpokemon(parametros);
+            await Volver();
+        }
+
+        public async Task Volver()
+        {
+            await Navigation.PopAsync();
         }
         public void ProcesoSimple()
         {
         }
         #endregion
         #region COMANDOS
-        public ICommand ProcesoAsynccommand => new Command(async () => await ProccesoAsyncrong());
+        public ICommand InsertarCommand => new Command(async () => await Insertar());
+        public ICommand Volvercommand => new Command(async () => await Volver());
         public ICommand ProcesoSimpcommand => new Command(ProcesoSimple);
         #endregion
 

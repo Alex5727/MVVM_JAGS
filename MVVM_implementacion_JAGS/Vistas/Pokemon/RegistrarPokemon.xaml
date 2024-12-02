@@ -6,7 +6,11 @@
     <Grid RowDefinitions="80,*"
           BackgroundColor="#1d1d1d">
         <StackLayout Orientation="Horizontal" Margin="15">
-            <Image Source="https://i.ibb.co/bBXK84n/flecha-izquierda.png" WidthRequest="40"/>
+            <Image Source="https://i.ibb.co/DR5qsK2/flecha-izquierda-1.png" WidthRequest="40">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Volvercommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
             <Image Source="https://i.ibb.co/HzcKQ23/pokemonlogoo.webp"
                    HorizontalOptions="CenterAndExpand"/>
             <Image Source="https://i.ibb.co/LxqcmsQ/pokeball.png"/>
@@ -97,7 +101,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="Center">
-                <Image Source="https://i.ibb.co/yPcVFkf/ojo.png"
+                <Image Source="https://i.ibb.co/kxPFmRc/eye.png"
                        HeightRequest="20"/>
                 <Label Text="Vista previa"
                        FontSize="20"
@@ -148,7 +152,8 @@
                     FontAttributes="Bold"
                     FontSize="25"
                     WidthRequest="60"
-                    HeightRequest="60"/>
+                    HeightRequest="60"
+                    Command="{Binding InsertarCommand}"/>
             </Frame>
         </StackLayout>
 

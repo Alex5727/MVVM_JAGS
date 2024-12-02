@@ -4,6 +4,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using MVVM_implementacion_JAGS.Modelo;
+using MVVM_implementacion_JAGS.Vistas;
+using MVVM_implementacion_JAGS.Vistas.Pokemon;
 
 namespace MVVM_implementacion_JAGS.VistaModelo.VMpokemon
 {
@@ -22,15 +25,16 @@ namespace MVVM_implementacion_JAGS.VistaModelo.VMpokemon
         #endregion
         #region PROCESOS
 
-        public async Task ProccesoAsyncrong()
+        public async Task Iraregistro()
         {
+            await Navigation.PushAsync(new RegistrarPokemon());
         }
         public void ProcesoSimple()
         {
         }
         #endregion
         #region COMANDOS
-        public ICommand ProcesoAsynccommand => new Command(async () => await ProccesoAsyncrong());
+        public ICommand Iraregistrocommand => new Command(async () => await Iraregistro());
         public ICommand ProcesoSimpcommand => new Command(ProcesoSimple);
         #endregion
 

@@ -7,8 +7,9 @@ namespace MVVM_implementacion_JAGS.Modelo
     public class Mpokemon
     {
        public string Colorfondo { get; set; }
-
-       public string Icono { get; set; }
+        public string Colorpoder { get; set; }
+      
+        public string Icono { get; set; }
 
        public string Nombre { get; set; }
 
