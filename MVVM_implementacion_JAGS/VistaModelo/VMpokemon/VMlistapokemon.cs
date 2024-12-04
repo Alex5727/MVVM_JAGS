@@ -8,6 +8,7 @@ using MVVM_implementacion_JAGS.Modelo;
 using MVVM_implementacion_JAGS.Vistas;
 using MVVM_implementacion_JAGS.Vistas.Pokemon;
 using MVVM_implementacion_JAGS.Datos;
+using System.Collections.ObjectModel;
 
 namespace MVVM_implementacion_JAGS.VistaModelo.VMpokemon
 {
@@ -15,7 +16,7 @@ namespace MVVM_implementacion_JAGS.VistaModelo.VMpokemon
     {
         #region VARIABLES
         string _Texto;
-        List<Mpokemon> _Listapokemon;
+        ObservableCollection<Mpokemon> _Listapokemon;
         #endregion
         #region CONSTRUCTOR
         public VMlistapokemon(INavigation navigation)
@@ -25,10 +26,13 @@ namespace MVVM_implementacion_JAGS.VistaModelo.VMpokemon
         }
 
 
-        public List<Mpokemon> Listapokemon
+        public ObservableCollection<Mpokemon> Listapokemon
         {
             get { return _Listapokemon; }
-            set { SetValue(ref _Listapokemon, value); }
+            set { SetValue(ref _Listapokemon, value);
+                OnPropertyChanged();
+
+            }
         }
         #endregion
         #region PROCESOS

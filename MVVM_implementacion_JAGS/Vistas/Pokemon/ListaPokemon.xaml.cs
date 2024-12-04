@@ -13,10 +13,13 @@ namespace MVVM_implementacion_JAGS.Vistas.Pokemon
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListaPokemon : ContentPage
     {
+
         public ListaPokemon()
         {
             InitializeComponent();
-            BindingContext = new VMlistapokemon(Navigation);
+            BindingContext = new VMlistapokemon(Navigation); ;
+
         }
+
     }
 }

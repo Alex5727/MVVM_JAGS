@@ -7,6 +7,9 @@ using Firebase.Database.Query;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Collections.ObjectModel;
+using System.Reactive.Linq;
+using Firebase.Database;
 
 namespace MVVM_implementacion_JAGS.Datos
 {
@@ -28,21 +31,27 @@ namespace MVVM_implementacion_JAGS.Datos
         }
 
 
-        public async Task<List<Mpokemon>> MostrarPokemones()
+        public async Task<ObservableCollection<Mpokemon>> MostrarPokemones()
         {
-            return (await Cconexion.firebase
+            //return (await Cconexion.firebase
+            //  .Child("Pokemon")
+            //  .OnceAsync<Mpokemon>())
+            //.Select(item => new Mpokemon
+            //{
+            //Idpokemon = item.Key,
+            //    Nombre = item.Object.Nombre,
+            //    Colorfondo = item.Object.Colorfondo,
+            //    Colorpoder = item.Object.Colorpoder,
+            //    Icono = item.Object.Icono,
+            //    NroOrden = item.Object.NroOrden,
+            //    Poder = item.Object.Poder
+            //}).ToList();
+
+            var data = await Task.Run(()=> Cconexion.firebase
                 .Child("Pokemon")
-                .OnceAsync<Mpokemon>())
-                .Select(item => new Mpokemon
-                {
-                    Idpokemon = item.Key,
-                    Nombre = item.Object.Nombre,
-                    Colorfondo = item.Object.Colorfondo,
-                    Colorpoder = item.Object.Colorpoder,
-                    Icono = item.Object.Icono,
-                    NroOrden = item.Object.NroOrden,
-                    Poder = item.Object.Poder
-                }).ToList();
+                .AsObservable<Mpokemon>()
+                .AsObservableCollection());
+               return data;
         }
 
 
