@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using MVVM_implementacion_JAGS.Modelo;
 using MVVM_implementacion_JAGS.Vistas;
 using MVVM_implementacion_JAGS.Vistas.Pokemon;
+using MVVM_implementacion_JAGS.Datos;
 
 namespace MVVM_implementacion_JAGS.VistaModelo.VMpokemon
 {
@@ -14,16 +15,28 @@ namespace MVVM_implementacion_JAGS.VistaModelo.VMpokemon
     {
         #region VARIABLES
         string _Texto;
+        List<Mpokemon> _Listapokemon;
         #endregion
         #region CONSTRUCTOR
-
-        public string Texto
+        public VMlistapokemon(INavigation navigation)
         {
-            get { return _Texto; }
-            set { SetValue(ref _Texto, value); }
+            Navigation = navigation;
+            MostrarPokemon();
+        }
+
+
+        public List<Mpokemon> Listapokemon
+        {
+            get { return _Listapokemon; }
+            set { SetValue(ref _Listapokemon, value); }
         }
         #endregion
         #region PROCESOS
+        public async Task MostrarPokemon()
+        {
+            var funcion = new Dpokemon();
+            Listapokemon = await funcion.MostrarPokemones();
+        }
 
         public async Task Iraregistro()
         {
@@ -39,10 +52,8 @@ namespace MVVM_implementacion_JAGS.VistaModelo.VMpokemon
         #endregion
 
         #region CONSTRUCTOR
-        public VMlistapokemon(INavigation navigation)
-        {
-            Navigation = navigation;
-        }
+
         #endregion
     }
 }
+

@@ -28,7 +28,7 @@ namespace MVVM_implementacion_JAGS.Datos
         }
 
 
-        public async Task<List<Mpokemon>> MosstrarPokemones()
+        public async Task<List<Mpokemon>> MostrarPokemones()
         {
             return (await Cconexion.firebase
                 .Child("Pokemon")
