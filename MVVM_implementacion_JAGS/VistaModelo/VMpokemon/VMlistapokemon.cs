@@ -46,6 +46,10 @@ namespace MVVM_implementacion_JAGS.VistaModelo.VMpokemon
         {
             await Navigation.PushAsync(new RegistrarPokemon());
         }
+        public async Task Iradetalle(Mpokemon parametros)
+        {
+            await Navigation.PushAsync(new DetallePokemon(parametros));
+        }
         public void ProcesoSimple()
         {
         }
@@ -53,6 +57,8 @@ namespace MVVM_implementacion_JAGS.VistaModelo.VMpokemon
         #region COMANDOS
         public ICommand Iraregistrocommand => new Command(async () => await Iraregistro());
         public ICommand ProcesoSimpcommand => new Command(ProcesoSimple);
+        public ICommand Iradetallecommand => new Command<Mpokemon>(async (p) => await Iradetalle(p));
+
         #endregion
 
         #region CONSTRUCTOR
